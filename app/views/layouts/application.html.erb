@@ -11,6 +11,19 @@
   </head>
 
   <body>
+  <div class="header">
+    <% if current_devise_user.present?%>
+      <h3>Olá <strong><%= current_devise_user.name %></strong></h3>
+      <%= button_to "Sair", destroy_devise_user_session_path, method: :delete%>
+    <% else %>
+      <%= link_to "Entrar", new_devise_user_session_path %>
+      <%= link_to "Cadastrar", new_devise_user_registration_path %>
+    <% end %>
+  </div>
+    <div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

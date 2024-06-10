@@ -3,7 +3,7 @@
 <p>E-mail: <%= @user.email %></p>
 <p>Data de Nascimento: <%= @user.date_of_birth %></p>
 <p>Celular: <%= @user.phone %></p>
-<%= button_to 'Logout', logout_path, method: :delete %>
+<%= button_to 'Logout', destroy_devise_user_session_path, method: :delete %>
 <%= link_to "Cadastrar Animal", new_animal_path %>
 <br>
 <% if @animals.present? %>
@@ -20,5 +20,5 @@
     </div>
   <% end %>
 <% else %>
-  <p>Você não possui animais cadastrados.</p>
+  <p>O site não possui animais cadastrados ainda.</p>
 <% end %>

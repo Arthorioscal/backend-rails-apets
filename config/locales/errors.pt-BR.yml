@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        blank: "não preenchido"
+        invalid: "inválido"
