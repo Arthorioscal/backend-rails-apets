@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   # Animal routes
   resources :animals
 
+  namespace :api do
+    namespace :v1 do
+      resources :animals
+    end
+  end
+  
   # Dashboard
   get '/dashboard', to: 'dashboard#index'
 
