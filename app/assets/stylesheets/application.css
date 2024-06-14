@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require home
+ *= require header
+ *= require register
+ *= require login
+ *= require forgotpassword
+ *= require dashboard
+ *= require editanimal
+ *= newanimal
+ *= showanimal
  */
