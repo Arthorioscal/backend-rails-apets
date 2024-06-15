@@ -36,6 +36,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 1.5rem;
 }
 
 .info2 {
@@ -46,5 +47,33 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: end;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 520px) {
+  .info1 {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .info2 {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .info1-text {
+    font-size: 1rem;
+  }
+
+  .info2-text {
+    font-size: 1rem;
+  }
+
+  .petimg {
+    width: 350px;
+    height: 350px;
+  }
 }
