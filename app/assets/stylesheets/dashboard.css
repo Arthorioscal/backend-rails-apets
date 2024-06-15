@@ -62,6 +62,7 @@ h3 {
   padding: 50px;
   background-color: #015c7f;
   border-radius: 50px;
+  height: max-content;
 }
 
 .userinfo .welcome {
