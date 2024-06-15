@@ -1,35 +1,58 @@
-header {
-    position: relative;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    width: 100%;
-    background-color: #F8F8FF;
-    color: #0CBBFE;
-    box-shadow: 5px 0px 10px rgb(145, 145, 145);
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.log-in{
-    margin-right: 50px;
-    background-color: #015C7F;
-    font-weight: 900;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 30px;
+a {
+  text-decoration: none;
+  color: #0cbbfe;
 }
 
-.log-in:hover{
-    cursor: pointer;
-    background-color: #004966;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pacifico", sans-serif;
+  background-color: #f8f8ff;
+  margin: 0;
 }
 
-header h1{
-    margin: auto;
-    width: 50vw;
-    font-size: 6em;
-    margin: 0;
+.header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 4rem;
 }
 
+.header p {
+  font-size: 120%;
+  line-height: 10;
+  padding-right: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.header .logout {
+  font-family: "Pacifico", cursive;
+  border: none;
+  background-color: #f8f8ff;
+  color: #0cbbfe;
+  cursor: pointer;
+  padding-right: 30px;
+}
+
+.greet {
+  color: #0cbbfe;
+  font-size: 300px;
+}
+
+.notice {
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.alert {
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+}

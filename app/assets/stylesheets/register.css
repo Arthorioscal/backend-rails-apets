@@ -1,0 +1,51 @@
+body {
+  font-family: "Poppins";
+}
+
+.wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+
+input {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 12px;
+  border-color: rgb(0, 0, 0);
+  padding: 10px;
+  font-family: "Poppins";
+  font-weight: bold;
+}
+
+input[type="submit"] {
+  color: white;
+  background-color: #0cbbfe;
+  border: none;
+  margin: 30px;
+  padding: 10px 50px;
+}
+
+input[type="submit"]:hover {
+  background-color: #079ad4;
+  cursor: pointer;
+}
+
+.field {
+  padding: 10px;
+  color: #015c7f;
+}
+
+h2 {
+  color: #0cbbfe;
+}
+
+select {
+  color: #015c7f;
+  font-family: "Poppins";
+  font-weight: bold;
+}

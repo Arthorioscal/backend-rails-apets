@@ -1,22 +1,31 @@
+<head>
+  <title>Home</title>
+  <%= stylesheet_link_tag 'newanimal', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class='wrapper'>
 <h1>Cadastrar Novo Animal</h1>
 
 <%= form_with(model: @animal, url: animals_path, local: true, html: { multipart: true }) do |form| %>
-   <div>
+   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :photo %>
     <%= form.file_field :photo %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :age %>
     <%= form.number_field :age %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :additional_info %>
     <%= form.text_area :additional_info %>
   </div>
@@ -25,3 +34,5 @@
     <%= form.submit "Cadastrar Animal" %>
   </div>
 <% end %>
+</div>
+</body>
