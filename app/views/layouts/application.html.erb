@@ -20,7 +20,7 @@
 
     <% if current_devise_user.present?%>
       <p class="greet">Olá <%= current_devise_user.name %></p>
-      <%= button_to "Sair", destroy_devise_user_session_path, method: :delete, class: "logout" %>
+      <%= button_to "Sair", destroy_devise_user_session_path, method: :delete, class: "userlogout" %>
     <% else %>
       <p><%= link_to "Entrar", new_devise_user_session_path %></p>
       <p><%= link_to "Cadastrar", new_devise_user_registration_path %></p>
