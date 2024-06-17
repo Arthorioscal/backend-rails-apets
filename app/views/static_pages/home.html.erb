@@ -1,8 +1,28 @@
 <head>
   <title>Home</title>
+  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Bem-vindo à nossa aplicação!</h1>
-    <%= link_to "Login", new_devise_user_session_path %>
-    <%= link_to "Cadastro", new_devise_user_registration_path %>
+<div class="wrapper">
+<div class="container-info">
+
+    <div class='info1'>
+    <%= image_tag 'pet12.jpg', width: 500, height: 500, class: 'petimg'%>
+        <div class='info1-text'>
+            <h2>Quem somos nós?</h2>
+            <p>Nós somos a <span class='infobold'>a.pets</span>. Surgimos da <br />necessidade de encontrar lares para <br />animais em situações de desabrigo <br />de forma fácil, simples e segura!</p>
+        </div>
+    </div>
+    <div class='info2'>
+        <div class='info2-text'>
+            <h2>Como funciona?</h2>
+            <p>Para começar é simples, só cadastrar <br />sua conta e provar sua identidade, que <br />você poderá listar um bichinho, <br />ou encontrar um para chamar de seu!</p>
+        </div>
+    <%= image_tag 'pet13.jpg', width: 500, height: 500, class: 'petimg'%>
+    </div>
+</div>
+</div>
 </body>

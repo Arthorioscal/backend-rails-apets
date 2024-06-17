@@ -6,18 +6,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "header", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
   <div class="header">
+
+    <h1><a href='/'>a.pets</a></h1>
+
     <% if current_devise_user.present?%>
-      <h3>Olá <strong><%= current_devise_user.name %></strong></h3>
-      <%= button_to "Sair", destroy_devise_user_session_path, method: :delete%>
+      <p class="greet">Olá <%= current_devise_user.name %></p>
+      <%= button_to "Sair", destroy_devise_user_session_path, method: :delete, class: "userlogout" %>
     <% else %>
-      <%= link_to "Entrar", new_devise_user_session_path %>
-      <%= link_to "Cadastrar", new_devise_user_registration_path %>
+      <p><%= link_to "Entrar", new_devise_user_session_path %></p>
+      <p><%= link_to "Cadastrar", new_devise_user_registration_path %></p>
     <% end %>
   </div>
     <div>

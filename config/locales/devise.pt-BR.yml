@@ -2,10 +2,6 @@ pt-BR:
   activerecord:
     attributes:
       user:
-        role: "Tipo de Usuário"
-        roles:
-          buffet_owner: "Dono de Buffet"
-          client: "Cliente"
         name: "Nome"
         cpf: 'CPF'
         confirmation_sent_at: Confirmação enviada em

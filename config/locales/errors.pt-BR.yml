@@ -4,3 +4,4 @@ pt-BR:
       messages:
         blank: "não preenchido"
         invalid: "inválido"
+        record_invalid: "O registro não pôde ser salvo: %{errors}"

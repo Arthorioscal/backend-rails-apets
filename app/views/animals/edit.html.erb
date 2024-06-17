@@ -1,35 +1,46 @@
+<head>
+  <title>Home</title>
+  <%= stylesheet_link_tag 'editanimal', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class='wrapper'>
 <h1>Editar Animal</h1>
 
 <%= form_with(model: @animal, url: animal_path(@animal), method: :patch) do |form| %>
-  <div>
-    <%= form.label :name %>
+  <div class="field">
+    <%= form.label :Nome %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :photo %>
+  <div class="field">
+    <%= form.label :Foto %>
     <%= form.file_field :photo %>
   </div>
 
-  <div>
-    <%= form.label :gender %>
+  <div class="field">
+    <%= form.label :Gênero %>
     <%= form.select :gender, ['Female', 'Male'] %>
   </div>
 
-  <div>
-    <%= form.label :breed %>
+  <div class="field">
+    <%= form.label :Raça %>
     <%= form.text_field :breed %>
   </div>
 
-  <div>
-    <%= form.label :age %>
+  <div class="field">
+    <%= form.label :Idade %>
     <%= form.number_field :age %>
   </div>
 
-  <div>
-    <%= form.label :additional_info %>
+  <div class="field">
+    <%= form.label :Informação_Adicional %>
     <%= form.text_area :additional_info %>
   </div>
 
   <%= form.submit "Salvar Alterações" %>
 <% end %>
+</div>
+</body>

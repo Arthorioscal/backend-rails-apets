@@ -1,24 +1,47 @@
-<h1>Dashboard</h1>
-<p>Bem-vindo ao seu dashboard, <%= @user.name %>!</p>
-<p>E-mail: <%= @user.email %></p>
-<p>Data de Nascimento: <%= @user.date_of_birth %></p>
-<p>Celular: <%= @user.phone %></p>
-<%= button_to 'Logout', destroy_devise_user_session_path, method: :delete %>
-<%= link_to "Cadastrar Animal", new_animal_path %>
-<br>
-<% if @animals.present? %>
-  <% @animals.each do |animal| %>
-    <div>
-      <h3><%= animal.name %></h3>
-      <p>Genêro: <%= animal.gender %></p>
-      <p>Raça: <%= animal.breed %></p>
-      <p>Idade: <%= animal.age %> anos</p>
-      <p>Descrição: <%= animal.additional_info %></p>
-      <p><%= link_to "Ver", animal_path(animal) %></p>
-      <p><%= link_to "Editar", edit_animal_path(animal) %></p>
-      <p><%= button_to 'Remover', animal_path(animal), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div>
-  <% end %>
-<% else %>
-  <p>O site não possui animais cadastrados ainda.</p>
-<% end %>
+<head>
+  <%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <div class="wrapper">
+    <div class="animalwrapper">
+      <% if @animals.present? %>
+        <% @animals.each do |animal| %>
+          <div class="animal">
+            <div class='img'>
+              <%= image_tag 'dog.png', width: '100%' %>
+            </div>
+            <div class='info'>
+              <h3><%= animal.name %></h3>
+              <p>Gênero: <%= animal.gender %></p>
+              <p>Raça: <%= animal.breed %></p>
+              <p>Idade: <%= animal.age %> anos</p>
+              <p>Descrição: <%= animal.additional_info %></p>
+            </div>
+            <div class='btns'>
+              <p><%= link_to "Ver Fotos", animal_path(animal) %></p>
+              <p><%= link_to "Editar", edit_animal_path(animal) %></p>
+              <p><%= button_to 'X', animal_path(animal), method: :delete, data: { confirm: 'Are you sure?' }, class: 'deletar'  %></p>
+            </div>
+          </div> <!-- Fechar .animal -->
+        <% end %>
+      <% else %>
+        <p>O site não possui animais cadastrados ainda.</p>
+      <% end %>
+    </div> <!-- Fechar .animalwrapper -->
+    
+    <div class="userinfo">
+      <p class='welcome'>Bem-vindo ao seu dashboard, <%= @user.name %>!</p>
+      <div class='cred'
+      <p>E-mail: <%= @user.email %></p>
+      <p>Data de Nascimento: <%= @user.date_of_birth %></p>
+      <p>Celular: <%= @user.phone %></p>
+      <%= button_to 'Logout', destroy_devise_user_session_path, method: :delete, class: 'logout' %>
+      <%= link_to "Cadastrar Animal", new_animal_path %>
+      </div>
+    </div> <!-- Fechar .userinfo -->
+  </div> <!-- Fechar .wrapper -->
+</body>

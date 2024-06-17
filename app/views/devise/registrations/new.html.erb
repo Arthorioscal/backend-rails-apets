@@ -1,49 +1,57 @@
-<h2>Sign up</h2>
+<head>
+  <%= stylesheet_link_tag 'register', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class='wrapper'>
+<h2>Insira suas informações abaixo</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="field email">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Insira seu e-mail"  %>
   </div>
 
-  <div class="field">
+  <div class="field password">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mínimo 6 caractéres" %>
   </div>
 
-  <div class="field">
+  <div class="field password">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Mínimo 6 caractéres"  %>
   </div>
 
-  <div>
+  <div class="field name">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, placeholder: "Insira seu nome"  %>
   </div>
 
-  <div>
-    <%= f.label :cpf %><br />
-    <%= f.text_field :cpf, autofocus: true %>
+  <div class="field cpf">
+  <%= f.label :cpf %><br />
+  <%= f.text_field :cpf, autofocus: true, placeholder: "Insira seu CPF"  %>
   </div>
-
-  <div>
-    <%= f.label :date_of_birth %><br />
-    <%= f.date_select :date_of_birth, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year] %>
-  </div>
-
-  <div>
+  
+  <div class="field phone">
     <%= f.label :phone %><br />
-    <%= f.telephone_field :phone %>
+    <%= f.telephone_field :phone, placeholder: "Insira seu telefone"  %>
   </div>
 
+  <div class="field dob">
+  <%= f.label :date_of_birth %><br />
+  <%= f.date_select :date_of_birth, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year] %>
+  </div>
+  
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Finalizar Cadastro" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+</body>

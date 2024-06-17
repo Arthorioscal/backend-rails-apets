@@ -1,0 +1,79 @@
+body {
+  font-family: "Poppins", cursive;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin: 0;
+  color: #0cbbfe;
+}
+
+p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.infobold {
+  font-weight: bold;
+}
+
+.info1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.info1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.info2 {
+  display: flex;
+}
+
+.info2-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 520px) {
+  .info1 {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .info2 {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .info1-text {
+    font-size: 1rem;
+  }
+
+  .info2-text {
+    font-size: 1rem;
+  }
+
+  .petimg {
+    width: 350px;
+    height: 350px;
+  }
+}

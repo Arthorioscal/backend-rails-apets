@@ -30,20 +30,16 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+  config.before(type: :system) do 
+    driven_by(:rack_test)
+  end
+
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
   ]
-
-  include ActiveSupport::Testing::TimeHelpers
-
-  config.include Devise::Test::IntegrationHelpers, type: :system
-  
-  config.include Warden::Test::Helpers
-
-  config.before(type: :system) do
-    driven_by(:rack_test) 
-  end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

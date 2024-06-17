@@ -1,16 +1,26 @@
+<head>
+  <title>Home</title>
+  <%= stylesheet_link_tag 'showanimal', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class='wrapper'>
 <h1><%= @animal.name %></h1>
 
 <p>
   <% if @animal.photo.attached? %>
-    <strong>Photo:</strong>
     <%= image_tag url_for(@animal.photo) %>
   <% end %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
+  <strong>Gênero</strong>
   <%= @animal.gender %>
 </p>
 
-<%= link_to 'Edit', edit_animal_path(@animal) %> |
-<%= link_to 'Back', dashboard_path %>
+<%= link_to 'Edit', edit_animal_path(@animal), class: 'showbtn' %> |
+<%= link_to 'Back', dashboard_path, class: 'showbtn' %>
+</div>
+</body>
