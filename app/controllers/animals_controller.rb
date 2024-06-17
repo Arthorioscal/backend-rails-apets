@@ -10,7 +10,7 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    @animal = Animal.new(animal_params)
+    @animal = current_devise_user.animals.build(animal_params)
     if @animal.save
       redirect_to dashboard_path, notice: "Pet cadastrado com sucesso."
     else
@@ -25,7 +25,7 @@ class AnimalsController < ApplicationController
   def update
     @animal = Animal.find(params[:id])
     if @animal.update(animal_params)
-      redirect_to dashboard_path, notice: "Animal atualizado com seucesso."
+      redirect_to dashboard_path, notice: "Animal atualizado com sucesso."
     else
       render :edit
     end
