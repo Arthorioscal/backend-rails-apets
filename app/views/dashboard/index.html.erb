@@ -23,8 +23,10 @@
             </div>
             <div class='btns'>
               <p><%= link_to "Ver Fotos", animal_path(animal) %></p>
-              <p><%= link_to "Editar", edit_animal_path(animal) %></p>
-              <p><%= button_to 'X', animal_path(animal), method: :delete, data: { confirm: 'Are you sure?' }, class: 'deletar'  %></p>
+              <% if animal.devise_user == current_devise_user %>
+                  <p><%= link_to "Editar", edit_animal_path(animal) %></p>
+                  <p><%= button_to 'X', animal_path(animal), method: :delete, data: { confirm: 'Are you sure?' }, class: 'deletar'  %></p>
+              <% end %>
             </div>
           </div> <!-- Fechar .animal -->
         <% end %>

@@ -5,3 +5,4 @@ pt-BR:
         blank: "não preenchido"
         invalid: "inválido"
         record_invalid: "O registro não pôde ser salvo: %{errors}"
+        taken: "já está em uso"
