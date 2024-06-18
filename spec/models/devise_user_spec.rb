@@ -43,8 +43,11 @@ RSpec.describe DeviseUser, type: :model do
     expect(user.errors[:email]).to include(I18n.t('activerecord.errors.messages.invalid'))
   end
 
-  it { should validate_uniqueness_of(:email).case_insensitive }
-  it { should validate_uniqueness_of(:cpf) }
-  it { should validate_uniqueness_of(:phone) }
+  it { should validate_uniqueness_of(:email).case_insensitive } 
 
+  it { should validate_uniqueness_of(:cpf).case_insensitive }
+
+  it { should validate_uniqueness_of(:phone).case_insensitive }
+
+  it { should validate_length_of(:password).is_at_least(6) }
 end
