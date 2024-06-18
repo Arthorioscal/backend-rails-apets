@@ -28,6 +28,8 @@ gem "jbuilder"
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem "sqlite3"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
